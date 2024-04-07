@@ -18,7 +18,10 @@ const userSchema = new mongoose.Schema({
     },
     country: {
         type: String,
-    }
+    },
+    name: {
+        type: String,
+    },
 
 });
 
