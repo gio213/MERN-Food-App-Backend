@@ -16,6 +16,10 @@ app.use(express.json());
 
 app.use(cors());
 
+app.get("/health", (req: Request, res: Response) => {
+    res.send({ message: "Health OK!" });
+});
+
 // /api/my/user
 app.use("/api/my/user", myUserRoute);
 
