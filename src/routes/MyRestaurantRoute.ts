@@ -12,7 +12,7 @@ const upload = multer({ storage: storage, limits: { fieldSize: 5 * 1024 * 1025 }
 
 // /api/my/restaurant
 
-router.post("/", validateMyRestaurantRequest, jwtCheck, jwtParse, upload.single("imageFile"), MyRestaurantController.createMyRestaurant);
+router.post("/", upload.single("imageFile"), validateMyRestaurantRequest, jwtCheck, jwtParse, MyRestaurantController.createMyRestaurant);
 
 
 export default router;

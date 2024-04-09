@@ -23,7 +23,7 @@ const createMyRestaurant = async (req: Request, res: Response) => {
 
 
         const restaurant = new Restaurant(req.body);
-        restaurant.imageUrls = uploadResponse.url;
+        restaurant.imageUrl = uploadResponse.url;
 
         restaurant.user = new mongoose.Types.ObjectId(req.userId);
         restaurant.lastUpdated = new Date();
