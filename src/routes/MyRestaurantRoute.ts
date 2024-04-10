@@ -11,7 +11,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage, limits: { fieldSize: 5 * 1024 * 1025 } }); // 5MB
 
 // /api/my/restaurant
-
+router.get("/", jwtCheck, jwtParse, MyRestaurantController.getMyRestaurant);
 router.post("/", upload.single("imageFile"), validateMyRestaurantRequest, jwtCheck, jwtParse, MyRestaurantController.createMyRestaurant);
 
 
