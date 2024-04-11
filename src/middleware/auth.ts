@@ -33,7 +33,8 @@ export const jwtParse = async (req: Request, res: Response, next: NextFunction) 
         const decoded = jwt.decode(token) as jwt.JwtPayload;
         const auth0Id = decoded.sub;
 
-        const user = await User.findOne({ auth })
+        const user = await User.findOne({ auth0Id })
+        console.log(user);
 
         if (!user) {
             return res.status(404).json({ message: 'User not found' })
