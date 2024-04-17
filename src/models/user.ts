@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 
-
 const userSchema = new mongoose.Schema({
-
     auth0Id: {
         type: String,
         required: true,
@@ -10,6 +8,9 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+    },
+    name: {
+        type: String,
     },
     addressLine1: {
         type: String,
@@ -20,12 +21,7 @@ const userSchema = new mongoose.Schema({
     country: {
         type: String,
     },
-    name: {
-        type: String,
-    },
-
 });
 
 const User = mongoose.model("User", userSchema);
-
 export default User;
